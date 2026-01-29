@@ -1,17 +1,30 @@
 [
-	{
-		"dates": "June 2018 Â· Present",
-		"role": "Web & Product Designer",
-		"company": "Company Name",
-		"description": "Leading the design of user-centric web applications and dating platforms.",
-		"logo": "/assets/experiences/company.jpg"
-	},
-	{
-		"dates": "July 2016 Â· June 2017",
-		"role": "Web & Product Designer",
-		"company": "Company Name",
-		"description": "Spearheaded the design and development of e-commerce websites and online marketplaces.",
-		"logo": "/assets/experiences/company.jpg"
-	}
-
+  {
+    "dates": "Septiembre - Diciembre 2021",
+    "role": "Creadora de Contenido",
+    "company": "Farmacia Carmen Goicoa",
+    "description": "Diseño de plantillas y posts para redes sociales. Gestión de contenido digital.",
+    "logo": "/assets/experiences/company.jpg"
+  },
+  {
+    "dates": "Enero 2023 - Febrero 2024",
+    "role": "Diseñadora Gráfica",
+    "company": "Freelancer",
+    "description": "Creación de diseños y logotipos personalizados. Desarrollo de identidades visuales.",
+    "logo": "/assets/experiences/company.jpg"
+  },
+  {
+    "dates": "Marzo 2024 - Abril 2024",
+    "role": "Diseñadora Gráfica",
+    "company": "AREA 10 Marketing",
+    "description": "Creación de diseños y redacción de copys. Grabación y edición de Reels y TikToks.",
+    "logo": "/assets/experiences/company.jpg"
+  },
+  {
+    "dates": "Agosto 2024 - Actualidad",
+    "role": "Creadora de Contenido",
+    "company": "Orestes Comunica",
+    "description": "Elaboración de diseños y redacción de copys. Grabación y edición de vídeos. Creación de páginas web y tours virtuales.",
+    "logo": "/assets/experiences/company.jpg"
+  }
 ]

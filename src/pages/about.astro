@@ -1,53 +1,43 @@
 ---
-import {
-	ArrowUpRight,
-	Code,
-	Globe,
-	Mail,
-	Monitor,
-	Palette,
-	Smartphone,
-	Zap,
-} from "@lucide/astro";
+import { Mail } from "@lucide/astro";
 import { siteConfig } from "@/config/site.js";
 import experiences from "@/collections/experiences.json";
-import social from "@/collections/social.json";
 import AboutExperience from "@/components/elements/AboutExperience.astro";
 import Button from "@/components/ui/Button.astro";
-import Matter from "@/components/ui/Matter.astro";
 import Layout from "@/layouts/Layout.astro";
 import Toc from "@/components/widgets/Toc.astro";
 
-// Manually define page table of contents structure
 const headings = [
-  { depth: 2, slug: "about-me", text: "About Me" },
-  { depth: 2, slug: "expertise", text: "Expertise" },
-  { depth: 2, slug: "tool-stack", text: "Tool Stack" },
-  { depth: 2, slug: "experience", text: "Experience" },
-  { depth: 2, slug: "lets-connect", text: "Let's Connect" },
+  { depth: 2, slug: "perfil-profesional", text: "Perfil profesional" },
+  { depth: 2, slug: "formacion", text: "Formación" },
+  { depth: 2, slug: "competencias-tecnicas", text: "Competencias técnicas" },
+  { depth: 2, slug: "experiencia-profesional", text: "Experiencia profesional" },
+  { depth: 2, slug: "proyectos-destacados", text: "Proyectos destacados" },
+  { depth: 2, slug: "capacidades-profesionales", text: "Capacidades profesionales" },
+  { depth: 2, slug: "metodologia-de-trabajo", text: "Metodología de trabajo" },
+  { depth: 2, slug: "filosofia-de-diseno", text: "Filosofía de diseño" },
+  { depth: 2, slug: "sectores-de-experiencia", text: "Sectores de experiencia" },
+  { depth: 2, slug: "habilidades-complementarias", text: "Habilidades complementarias" },
+  { depth: 2, slug: "idiomas", text: "Idiomas" },
+  { depth: 2, slug: "contacto", text: "Contacto" },
 ];
 
 const filtered = headings.filter(h => h.depth <= 3);
-
 ---
 
-<Layout title="About Me">
-  <!-- Mobile TOC -->
+<Layout title="Portfolio profesional">
   <div class="block lg:hidden px-7 pt-6">
     <Toc headings={filtered} />
   </div>
 
-  <!-- Main container -->
-  <div class="relative site-container  mx-auto my-8">
+  <div class="relative site-container mx-auto my-8">
     <div class="flex flex-col lg:flex-row gap-8 lg:gap-12 xl:gap-16">
-      <!-- Left TOC - Fixed on desktop -->
       <aside class="relative hidden lg:block lg:w-40 xl:w-50 flex-shrink-0">
-          <div class="toc-sticky-wrapper">
-            <Toc headings={filtered} />
-          </div>
+        <div class="toc-sticky-wrapper">
+          <Toc headings={filtered} />
+        </div>
       </aside>
 
-      <!-- Right main content - Adaptive width -->
       <main class="relative flex-1 min-w-0 w-full lg:max-w-none">
         <div
           class="w-full"
@@ -55,295 +45,400 @@ const filtered = headings.filter(h => h.depth <= 3);
           data-aos-duration="500"
           data-aos-once="true"
         >
-            <h2
-              id="about-me"
-              class="text-2xl font-brand tracking-tight  sm:text-3xl lg:text-4xl"
-            >
-             About Me
-            </h2>
-            <div class="w-full border-b-1 border-dashed border-b-gray-200 dark:border-b-neutral-700 mt-4 mb-8"></div>
-      </div>
+          <h1 class="text-3xl font-brand tracking-tight sm:text-4xl lg:text-5xl">
+            Portfolio profesional
+          </h1>
+          <div class="w-full border-b-1 border-dashed border-b-gray-200 dark:border-b-neutral-700 mt-4 mb-8"></div>
+        </div>
 
         <div
-          class="flex items-center gap-3 mb-6"
+          class="flex items-center gap-4 mb-4"
           data-aos="fade-up-xs"
           data-aos-delay="100"
           data-aos-duration="500"
           data-aos-once="true"
         >
-            <img src="/assets/avatar.png" alt="Ricoui" class="w-14 h-14 rounded-full">
-            <div class="flex items-center gap-3">
-              <a href="https://www.ricoui.com/" target="_blank" class="font-brand text-[24px] text-neutral-700 dark:text-neutral-100">Rico</a>
-              <span class="text-[0.75em] text-neutral-400">|</span>
-              <a href="https://x.com/ricouii" class="flex items-center gap-1 text-neutral-500 hover:text-neutral-700 dark:text-neutral-400 dark:hover:text-neutral-200 text-sm" target="_blank">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-4.5 h-4.5 fill-current">
-                  <path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z" />
-                </svg>
-                @ricouii
-              </a>
-            </div>
+          <img src="/assets/avatar.png" alt="Carlota López Carracedo" class="w-14 h-14 rounded-full" />
+          <div>
+            <p class="text-2xl font-brand text-neutral-800 dark:text-neutral-100">
+              Carlota López Carracedo
+            </p>
+            <p class="text-sm text-neutral-500">carlotalopecarracedo@gmail.com</p>
+          </div>
         </div>
 
         <p
-          class="text-3xl mt-2 mb-2  font-brand italic text-left text-primary-strong dark:text-primary-light"
-          data-aos="fade-up-xs"
-          data-aos-delay="200"
-          data-aos-duration="500"
-          data-aos-once="true"
-        >"Beautiful design. Clean code. That's the goal."</p>
-        <!-- <div class="w-full border-b-1 border-dashed border-b-gray-200 dark:border-b-neutral-700 mt-4 mb-8"></div> -->
-
-        <div
-          class="social"
-          data-aos="fade-up-xs"
-          data-aos-delay="300"
-          data-aos-duration="600"
-          data-aos-once="true"
-        >
-             <div class="social-list flex flex-wrap gap-2 items-center justify-start mt-6 mb-8">
-                {social
-                  .filter(item => item.isShow !== false)
-                  .map((item, index) => (
-                    <a
-                      href={item.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      class="social-item relative group overflow-hidden rounded-xl transition-all duration-300 hover:-translate-y-2 hover:rotate-[-6deg] hover:shadow-lg"
-                      data-aos="fade-up-xs"
-                      data-aos-delay={400 + (index * 50)}
-                      data-aos-duration="400"
-                      data-aos-once="true"
-                    >
-                      <img
-                        src={item.image}
-                        alt={item.name}
-                        class="w-[96px] h-[96px] rounded-xl object-cover transition-transform duration-300 group-hover:scale-105"
-                      />
-                      <div class="absolute bottom-[10px] left-[12px] z-10">
-                        <div class="social-name font-semibold text-[10px] text-white drop-shadow-md">
-                          {item.name}
-                        </div>
-                        <div class="social-username text-[9px] text-white/85 drop-shadow-sm">
-                          @{item.username}
-                        </div>
-                      </div>
-                      {/* Hover overlay */}
-                      {/* <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div> */}
-                    </a>
-                  ))
-                }
-             </div>
-        </div>
-
-        <div class="w-full border-b-1 border-dashed border-b-gray-200 dark:border-b-neutral-700 mt-4 mb-8"></div>
-
-
-        <p
-          class="text-xl font-medium text-left text-neutral-800 dark:text-neutral-100"
-          data-aos="fade-up-xs"
-          data-aos-delay="100"
-          data-aos-duration="500"
-          data-aos-once="true"
-        >
-          I'm Rico, a Senior Web & Product Designer.
-        </p>
-        <p
-          class="text-neutral-700 pb-4 pt-4 leading-[1.8] dark:text-neutral-200"
+          class="text-neutral-700 pb-6 leading-[1.8] dark:text-neutral-200"
           data-aos="fade-up-xs"
           data-aos-delay="200"
           data-aos-duration="500"
           data-aos-once="true"
         >
-          With 8+ years of experience in UX/UI, I not only enjoy creative design and content creation, but coding is also one of my great interests. I often transform my rich and quirky ideas and creativity into design outcomes and tangible projects.
-
+          Creadora de contenido y diseñadora gráfica especializada en branding, diseño digital y producción audiovisual. Experiencia en desarrollo de identidades corporativas, diseño de materiales gráficos y gestión de contenido multiplataforma.
         </p>
-        <p
-          class="text-neutral-700  leading-[1.8] dark:text-neutral-200"
+
+        <div
+          class="flex item-center justify-start gap-3"
           data-aos="fade-up-xs"
           data-aos-delay="300"
           data-aos-duration="500"
           data-aos-once="true"
         >
-          Great design isn't just a pretty interfaceâ€”it helps people reach their goals naturally, fuels sustainable growth, and keeps systems solid as you scale. I connect design and development, bringing strategy, usability, and execution together to turn visuals into real, measurable results.
-        </p>
-
-
-        <div
-          class="mt-8 mb-16 flex item-center justify-start gap-3"
-          data-aos="fade-up-xs"
-          data-aos-delay="400"
-          data-aos-duration="500"
-          data-aos-once="true"
-        >
-              <Button url="mailto:hello@rico.com" > <Mail  size={16} />  hello@ricoui.com</Button>
-              <Button url={siteConfig.resume} type="fill"> Resume <ArrowUpRight  size={16} /> </Button>
+          <Button url={`mailto:${siteConfig.mail}`}>
+            <Mail size={16} />
+            Contacto
+          </Button>
         </div>
 
-        <!-- <img src="/assets/about.jpg" class="relative z-30 w-full my-10 rounded-xl" /> -->
-
-        <div class="w-full border-b-1 border-dashed border-b-neutral-200 dark:border-b-neutral-700 mt-4 mb-8"></div>
-          <section>
-              <h2
-                id="expertise"
-                class="mt-8 mb-2 text-[28px] text-neutral-800  dark:text-neutral-200 font-brand"
-                data-aos="fade-up-xs"
-                data-aos-duration="500"
-                data-aos-once="true"
-              >Expertise</h2>
-              <div
-                class="list flex flex-wrap gap-3 mt-4 mb-12 w-full items-center justify-start"
-                data-aos="fade-up-xs"
-                data-aos-delay="100"
-                data-aos-duration="600"
-                data-aos-once="true"
-              >
-                <!-- Product Design -->
-                <div class="item flex justify-start items-start flex-grow-0 flex-shrink-0 overflow-hidden gap-2 px-5 py-4 rounded-xl  bg-gradient-to-b from-[f7f8f0] to-[#f1f2f9]  dark:from-gray-900 dark:to-gray-800 dark:text-neutral-200 ">
-                  <div class="flex justify-center items-center flex-grow-0 flex-shrink-0 gap-2">
-                    <Palette size={22} />
-                    <div class="flex-grow-0 flex-shrink-0 text-base font-medium text-left text-neutral-700 dark:text-neutral-200">
-                      Product Design
-                    </div>
-                  </div>
-                </div>
-                <!-- Website Design -->
-                <div class="item flex justify-start items-start flex-grow-0 flex-shrink-0 overflow-hidden gap-2 px-5 py-4  rounded-xl  bg-gradient-to-b from-[f7f8f0] to-[#f1f2f9]  dark:from-gray-900 dark:to-gray-800">
-                  <div class="flex justify-center items-center flex-grow-0 flex-shrink-0 gap-2">
-                    <Globe size={22} />
-                    <div class="flex-grow-0 flex-shrink-0 text-base font-medium text-left text-neutral-700 dark:text-neutral-200">
-                      Website Design
-                    </div>
-                  </div>
-                </div>
-                <!-- Brand Design -->
-                <div class="item flex justify-start items-start flex-grow-0 flex-shrink-0 overflow-hidden gap-2 px-5 py-4  rounded-xl  bg-gradient-to-b from-[f7f8f0] to-[#f1f2f9]  dark:from-gray-900 dark:to-gray-800">
-                  <div class="flex justify-center items-center flex-grow-0 flex-shrink-0 gap-2">
-                    <Zap size={22} />
-                    <div class="flex-grow-0 flex-shrink-0 text-base font-medium text-left text-neutral-700 dark:text-neutral-200">
-                      Brand Design
-                    </div>
-                  </div>
-                </div>
-                <!-- Prototyping -->
-                <div class="item flex justify-start items-start flex-grow-0 flex-shrink-0 overflow-hidden gap-2 px-5 py-4  rounded-xl  bg-gradient-to-b from-[f7f8f0] to-[#f1f2f9]  dark:from-gray-900 dark:to-gray-800">
-                  <div class="flex justify-center items-center flex-grow-0 flex-shrink-0 gap-2">
-                    <Monitor size={22} />
-                    <div class="flex-grow-0 flex-shrink-0 text-base font-medium text-left text-neutral-700 dark:text-neutral-200">
-                      Prototyping
-                    </div>
-                  </div>
-                </div>
-                <!-- Development -->
-                <div class="item flex justify-start items-start flex-grow-0 flex-shrink-0 overflow-hidden gap-2 px-5 py-4  rounded-xl  bg-gradient-to-b from-[f7f8f0] to-[#f1f2f9]  dark:from-gray-900 dark:to-gray-800">
-                  <div class="flex justify-center items-center flex-grow-0 flex-shrink-0 gap-2">
-                    <Code size={22} />
-                    <div class="flex-grow-0 flex-shrink-0 text-base font-medium text-left text-neutral-700 dark:text-neutral-200">
-                      Development
-                    </div>
-                  </div>
-                </div>
-                <!-- UI/UX Design -->
-                <div class="item flex justify-start items-start flex-grow-0 flex-shrink-0 overflow-hidden gap-2 px-5 py-4  rounded-xl  bg-gradient-to-b from-[f7f8f0] to-[#f1f2f9]  dark:from-gray-900 dark:to-gray-800">
-                  <div class="flex justify-center items-center flex-grow-0 flex-shrink-0 gap-2">
-                    <Smartphone size={22} />
-                    <div class="flex-grow-0 flex-shrink-0 text-base font-medium text-left text-neutral-700 dark:text-neutral-200">
-                      UI/UX Design
-                    </div>
-                  </div>
-                </div>
-              </div>
-          </section>
-
-        <div class="w-full border-b-1 border-dashed border-b-gray-200 dark:border-b-neutral-700 mt-4 mb-8"></div>
+        <div class="w-full border-b-1 border-dashed border-b-gray-200 dark:border-b-neutral-700 mt-8 mb-10"></div>
 
         <section>
-          <h2
-            id="tool-stack"
-            class="mt-12 mb-4 text-[28px] text-neutral-800  dark:text-neutral-200 font-brand"
-            data-aos="fade-up-xs"
-            data-aos-duration="500"
-            data-aos-once="true"
-          >Tool Stack</h2>
-          <div
-            class="tool-stack-box relative bg-white border-accent/25 dark:bg-gray-900 rounded-xl overflow-hidden w-full h-[500px]"
-            data-aos="fade-up-sm"
-            data-aos-delay="100"
-            data-aos-duration="600"
-            data-aos-once="true"
-          >
-              <Matter />
-              <!-- Fallback content if Matter.js doesn't load -->
-              <div class="absolute inset-0 flex items-center justify-center text-white opacity-50">
-              </div>
+          <h2 id="perfil-profesional" class="mt-2 mb-3 text-[28px] text-neutral-800 dark:text-neutral-200 font-brand">
+            Perfil profesional
+          </h2>
+          <p class="text-neutral-700 leading-[1.8] dark:text-neutral-200">
+            Enfoque creativo y estratégico para construir marcas consistentes y contenido que conecte con la audiencia. Especializada en identidad visual, diseño digital y producción audiovisual con orientación a resultados.
+          </p>
+        </section>
+
+        <div class="w-full border-b-1 border-dashed border-b-gray-200 dark:border-b-neutral-700 mt-8 mb-10"></div>
+
+        <section>
+          <h2 id="formacion" class="mt-2 mb-3 text-[28px] text-neutral-800 dark:text-neutral-200 font-brand">
+            Formación
+          </h2>
+          <div class="space-y-3">
+            <div>
+              <p class="text-lg font-semibold text-neutral-800 dark:text-neutral-200">
+                Grado en Publicidad y Relaciones Públicas
+              </p>
+              <ul class="list-disc pl-5 text-neutral-700 dark:text-neutral-200 leading-7">
+                <li>Universidad de Vigo | 2020-2024</li>
+                <li>Universidad de Valladolid | 2022-2023</li>
+                <li>Universidad Complutense de Madrid | 2023-2024</li>
+              </ul>
+            </div>
           </div>
         </section>
 
-        <div class="w-full border-b-1 border-dashed border-b-gray-200 dark:border-b-neutral-700 mt-12 mb-12"></div>
-      <section class="experience">
-        <h2
-          id="experience"
-          class="mt-12 mb-4 text-[28px] text-neutral-800  dark:text-neutral-200 font-brand"
-          data-aos="fade-up-xs"
-          data-aos-duration="500"
-          data-aos-once="true"
-        >
-          Experience
-        </h2>
-        <div
-          class="px-5 py-10"
-          data-aos="fade-up-xs"
-          data-aos-delay="100"
-          data-aos-duration="600"
-          data-aos-once="true"
-        >
-          {
-            experiences.map((experience, index) => {
-              return (
-                <div
-                  class="pb-10 border-l border-dashed border-gray-200 last:border-l-0 dark:border-neutral-500"
-                  data-aos="fade-up-xs"
-                  data-aos-delay={200 + (index * 100)}
-                  data-aos-duration="500"
-                  data-aos-once="true"
-                >
-                  <AboutExperience
-                    dates={experience.dates}
-                    role={experience.role}
-                    company={experience.company}
-                    description={experience.description}
-                    logo={experience.logo}
-                  />
-                </div>
-              )
-            })
-          }
-        </div>
-      </section>
-        <div class="w-full border-b-1 border-dashed border-b-gray-200 dark:border-b-neutral-700 mt-4 mb-8"></div>
-      <section>
-        <h2
-          id="lets-connect"
-          class="mt-12 mb-4 text-[28px] text-neutral-800  dark:text-neutral-200 font-brand"
-          data-aos="fade-up-xs"
-          data-aos-duration="500"
-          data-aos-once="true"
-        >Let's Connect</h2>
-        <p
-          class="text-sm leading-6 text-neutral-700 dark:text-neutral-300"
-          data-aos="fade-up-xs"
-          data-aos-delay="100"
-          data-aos-duration="500"
-          data-aos-once="true"
-        >
-          If you want to stay up to date with my work be sure to <a
-            href={siteConfig.social.twitter}
-            target="_blank"
-            class="text-indigo-500 underline">follow me on twitter</a
-          >, or you can send me an <a href="mailto:hello@ricoui.com" class=" underline"
-            >email</a
-          > and I'll be sure to get back to you.
-        </p>
-      </section>
+        <div class="w-full border-b-1 border-dashed border-b-gray-200 dark:border-b-neutral-700 mt-8 mb-10"></div>
+
+        <section>
+          <h2 id="competencias-tecnicas" class="mt-2 mb-3 text-[28px] text-neutral-800 dark:text-neutral-200 font-brand">
+            Competencias técnicas
+          </h2>
+          <h3 class="text-base font-semibold text-neutral-800 dark:text-neutral-200">
+            Software de diseño
+          </h3>
+          <ul class="list-disc pl-5 mt-3 text-neutral-700 dark:text-neutral-200 leading-7">
+            <li>Adobe Illustrator</li>
+            <li>Adobe Photoshop</li>
+            <li>Adobe InDesign</li>
+            <li>Canva</li>
+            <li>Figma</li>
+            <li>DaVinci Resolve</li>
+            <li>CapCut</li>
+            <li>Procreate</li>
+            <li>Elementor</li>
+            <li>WordPress</li>
+          </ul>
+        </section>
+
+        <div class="w-full border-b-1 border-dashed border-b-gray-200 dark:border-b-neutral-700 mt-8 mb-10"></div>
+
+        <section class="experience">
+          <h2 id="experiencia-profesional" class="mt-2 mb-4 text-[28px] text-neutral-800 dark:text-neutral-200 font-brand">
+            Experiencia profesional
+          </h2>
+          <div class="px-5 py-6">
+            {experiences.map((experience, index) => (
+              <div
+                class="pb-10 border-l border-dashed border-gray-200 last:border-l-0 dark:border-neutral-500"
+                data-aos="fade-up-xs"
+                data-aos-delay={200 + (index * 100)}
+                data-aos-duration="500"
+                data-aos-once="true"
+              >
+                <AboutExperience
+                  dates={experience.dates}
+                  role={experience.role}
+                  company={experience.company}
+                  description={experience.description}
+                  logo={experience.logo}
+                />
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <div class="w-full border-b-1 border-dashed border-b-gray-200 dark:border-b-neutral-700 mt-2 mb-10"></div>
+
+        <section>
+          <h2 id="proyectos-destacados" class="mt-2 mb-4 text-[28px] text-neutral-800 dark:text-neutral-200 font-brand">
+            Proyectos destacados
+          </h2>
+
+          <div class="space-y-8">
+            <div>
+              <h3 class="text-lg font-semibold text-neutral-800 dark:text-neutral-200">1. Quimeras del Norte</h3>
+              <p class="text-sm text-neutral-500">Tipo: Branding e identidad visual</p>
+              <p class="text-neutral-700 dark:text-neutral-200 leading-[1.8] mt-2">
+                Proyecto de identidad corporativa para una plataforma web de narrativas gallegas. La propuesta se centra en trasladar historias y escritos de diversos personajes gallegos al entorno digital.
+              </p>
+              <div class="mt-3">
+                <p class="text-sm font-semibold text-neutral-700 dark:text-neutral-200">Concepto</p>
+                <ul class="list-disc pl-5 text-neutral-700 dark:text-neutral-200 leading-7">
+                  <li>Misión: Difundir narraciones e historias de diversos personajes a través de su propia página web.</li>
+                  <li>Visión: Alcanzar visibilidad entre lectores y consumidores de contenidos online.</li>
+                </ul>
+              </div>
+              <div class="mt-3">
+                <p class="text-sm font-semibold text-neutral-700 dark:text-neutral-200">Elementos de identidad</p>
+                <ul class="list-disc pl-5 text-neutral-700 dark:text-neutral-200 leading-7">
+                  <li>Color verde: representa naturaleza y el entorno del escritor.</li>
+                  <li>Roble (carballo): árbol representativo de Galicia y eje de la identidad.</li>
+                  <li>Quimera: referencia mitológica ligada al contenido imposible de las historias.</li>
+                </ul>
+              </div>
+              <div class="mt-3">
+                <p class="text-sm font-semibold text-neutral-700 dark:text-neutral-200">Entregables</p>
+                <ul class="list-disc pl-5 text-neutral-700 dark:text-neutral-200 leading-7">
+                  <li>Logotipo con tipografía serif elegante.</li>
+                  <li>Símbolo de árbol estilizado en verde.</li>
+                  <li>Sistema de identidad visual completo.</li>
+                  <li>Paleta de color corporativa.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="text-lg font-semibold text-neutral-800 dark:text-neutral-200">2. Nobreh</h3>
+              <p class="text-sm text-neutral-500">Tipo: Identidad corporativa | Gestión de inversiones</p>
+              <p class="text-neutral-700 dark:text-neutral-200 leading-[1.8] mt-2">
+                Desarrollo de imagen visual corporativa para una empresa familiar de gestión de inversiones compuesta por cinco miembros. Se creó una identidad visual desde cero.
+              </p>
+              <div class="mt-3">
+                <p class="text-sm font-semibold text-neutral-700 dark:text-neutral-200">Requisitos del cliente</p>
+                <ul class="list-disc pl-5 text-neutral-700 dark:text-neutral-200 leading-7">
+                  <li>Elegancia</li>
+                  <li>Simplicidad</li>
+                </ul>
+              </div>
+              <div class="mt-3">
+                <p class="text-sm font-semibold text-neutral-700 dark:text-neutral-200">Concepto creativo</p>
+                <ul class="list-disc pl-5 text-neutral-700 dark:text-neutral-200 leading-7">
+                  <li>Color amarillo: simboliza riqueza.</li>
+                  <li>Trébol: indica fortuna.</li>
+                  <li>5 hojas: representa el número de integrantes de la familia.</li>
+                </ul>
+              </div>
+              <div class="mt-3">
+                <p class="text-sm font-semibold text-neutral-700 dark:text-neutral-200">Solución de diseño</p>
+                <ul class="list-disc pl-5 text-neutral-700 dark:text-neutral-200 leading-7">
+                  <li>Logotipo limpio y elegante con tipografía serif.</li>
+                  <li>Símbolo de trébol de 5 hojas estilizado.</li>
+                  <li>Color dorado/amarillo como principal.</li>
+                  <li>Sistema de identidad minimalista y sofisticado.</li>
+                </ul>
+              </div>
+              <div class="mt-3">
+                <p class="text-sm font-semibold text-neutral-700 dark:text-neutral-200">Entregables</p>
+                <ul class="list-disc pl-5 text-neutral-700 dark:text-neutral-200 leading-7">
+                  <li>Marca principal y secundaria.</li>
+                  <li>Símbolo gráfico explicado conceptualmente.</li>
+                  <li>Manual de identidad visual.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="text-lg font-semibold text-neutral-800 dark:text-neutral-200">3. Vitamina 3</h3>
+              <p class="text-sm text-neutral-500">Tipo: Branding | Proyecto universitario</p>
+              <p class="text-neutral-700 dark:text-neutral-200 leading-[1.8] mt-2">
+                Proyecto universitario desarrollado por duplas creativas que refleja los valores del equipo y el potencial profesional conjunto.
+              </p>
+              <div class="mt-3">
+                <p class="text-sm font-semibold text-neutral-700 dark:text-neutral-200">Concepto</p>
+                <p class="text-neutral-700 dark:text-neutral-200 leading-7">
+                  El nombre "Vitamina 3" nace de la metáfora de aportar energía y vitalidad a las marcas, diferenciándose de la competencia con originalidad.
+                </p>
+              </div>
+              <div class="mt-3">
+                <p class="text-sm font-semibold text-neutral-700 dark:text-neutral-200">Propuesta de valor</p>
+                <ul class="list-disc pl-5 text-neutral-700 dark:text-neutral-200 leading-7">
+                  <li>Misión: Aportar una dosis de energía a las marcas de la manera más atípica posible.</li>
+                  <li>Visión: Llevar a los clientes a la cúspide de la publicidad acompañándoles en cada paso.</li>
+                </ul>
+              </div>
+              <div class="mt-3">
+                <p class="text-sm font-semibold text-neutral-700 dark:text-neutral-200">Elementos visuales</p>
+                <ul class="list-disc pl-5 text-neutral-700 dark:text-neutral-200 leading-7">
+                  <li>33,3% atípicamente diferente: cada miembro aporta un tercio único.</li>
+                  <li>El 33,3% de tu dosis diaria de energía: metáfora nutricional aplicada al branding.</li>
+                  <li>33,3% más cercano que nunca: enfoque personalizado.</li>
+                </ul>
+              </div>
+              <div class="mt-3">
+                <p class="text-sm font-semibold text-neutral-700 dark:text-neutral-200">Identidad</p>
+                <ul class="list-disc pl-5 text-neutral-700 dark:text-neutral-200 leading-7">
+                  <li>Símbolo circular que representa sol y energía.</li>
+                  <li>Color verde lima/amarillo verdoso.</li>
+                  <li>Tipografía bold y moderna.</li>
+                  <li>Sistema gráfico basado en porcentajes y fracciones.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="w-full border-b-1 border-dashed border-b-gray-200 dark:border-b-neutral-700 mt-8 mb-10"></div>
+
+        <section>
+          <h2 id="capacidades-profesionales" class="mt-2 mb-4 text-[28px] text-neutral-800 dark:text-neutral-200 font-brand">
+            Capacidades profesionales
+          </h2>
+          <div class="grid gap-6 md:grid-cols-2">
+            <div>
+              <h3 class="text-base font-semibold text-neutral-800 dark:text-neutral-200">Diseño gráfico</h3>
+              <ul class="list-disc pl-5 text-neutral-700 dark:text-neutral-200 leading-7">
+                <li>Identidad corporativa y branding</li>
+                <li>Diseño de logotipos</li>
+                <li>Manuales de marca</li>
+                <li>Diseño editorial</li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="text-base font-semibold text-neutral-800 dark:text-neutral-200">Contenido digital</h3>
+              <ul class="list-disc pl-5 text-neutral-700 dark:text-neutral-200 leading-7">
+                <li>Diseño de plantillas para RRSS</li>
+                <li>Creación de posts y contenido visual</li>
+                <li>Redacción de copys publicitarios</li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="text-base font-semibold text-neutral-800 dark:text-neutral-200">Producción audiovisual</h3>
+              <ul class="list-disc pl-5 text-neutral-700 dark:text-neutral-200 leading-7">
+                <li>Grabación de contenido</li>
+                <li>Edición de video (Reels, TikToks)</li>
+                <li>Postproducción</li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="text-base font-semibold text-neutral-800 dark:text-neutral-200">Desarrollo web</h3>
+              <ul class="list-disc pl-5 text-neutral-700 dark:text-neutral-200 leading-7">
+                <li>Diseño de páginas web</li>
+                <li>Tours virtuales</li>
+                <li>WordPress y Elementor</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <div class="w-full border-b-1 border-dashed border-b-gray-200 dark:border-b-neutral-700 mt-8 mb-10"></div>
+
+        <section>
+          <h2 id="metodologia-de-trabajo" class="mt-2 mb-4 text-[28px] text-neutral-800 dark:text-neutral-200 font-brand">
+            Metodología de trabajo
+          </h2>
+          <div class="space-y-4">
+            <div>
+              <h3 class="text-base font-semibold text-neutral-800 dark:text-neutral-200">Fase de investigación</h3>
+              <ul class="list-disc pl-5 text-neutral-700 dark:text-neutral-200 leading-7">
+                <li>Análisis del cliente y sector</li>
+                <li>Definición de misión y visión</li>
+                <li>Identificación de valores de marca</li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="text-base font-semibold text-neutral-800 dark:text-neutral-200">Fase creativa</h3>
+              <ul class="list-disc pl-5 text-neutral-700 dark:text-neutral-200 leading-7">
+                <li>Desarrollo conceptual</li>
+                <li>Justificación estratégica del diseño</li>
+                <li>Selección de paleta cromática con significado</li>
+                <li>Creación de simbolismos</li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="text-base font-semibold text-neutral-800 dark:text-neutral-200">Fase de producción</h3>
+              <ul class="list-disc pl-5 text-neutral-700 dark:text-neutral-200 leading-7">
+                <li>Diseño de aplicaciones</li>
+                <li>Desarrollo de entregables</li>
+                <li>Presentación profesional</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <div class="w-full border-b-1 border-dashed border-b-gray-200 dark:border-b-neutral-700 mt-8 mb-10"></div>
+
+        <section>
+          <h2 id="filosofia-de-diseno" class="mt-2 mb-4 text-[28px] text-neutral-800 dark:text-neutral-200 font-brand">
+            Filosofía de diseño
+          </h2>
+          <p class="text-neutral-700 dark:text-neutral-200 leading-[1.8]">
+            Enfoque estratégico donde cada elemento visual tiene un propósito y significado. Especialización en crear identidades que cuentan historias.
+          </p>
+          <ul class="list-disc pl-5 mt-3 text-neutral-700 dark:text-neutral-200 leading-7">
+            <li>Simbolismo cultural: integración de elementos locales.</li>
+            <li>Color con propósito: cada elección cromática responde a valores de marca.</li>
+            <li>Simplicidad elegante: diseños limpios que comunican efectivamente.</li>
+            <li>Narrativa visual: cada proyecto cuenta una historia coherente.</li>
+          </ul>
+        </section>
+
+        <div class="w-full border-b-1 border-dashed border-b-gray-200 dark:border-b-neutral-700 mt-8 mb-10"></div>
+
+        <section>
+          <h2 id="sectores-de-experiencia" class="mt-2 mb-4 text-[28px] text-neutral-800 dark:text-neutral-200 font-brand">
+            Sectores de experiencia
+          </h2>
+          <ul class="list-disc pl-5 text-neutral-700 dark:text-neutral-200 leading-7">
+            <li>Salud y farmacia</li>
+            <li>Marketing y publicidad</li>
+            <li>Gestión financiera e inversiones</li>
+            <li>Cultura y narrativa</li>
+            <li>Servicios creativos</li>
+          </ul>
+        </section>
+
+        <div class="w-full border-b-1 border-dashed border-b-gray-200 dark:border-b-neutral-700 mt-8 mb-10"></div>
+
+        <section>
+          <h2 id="habilidades-complementarias" class="mt-2 mb-4 text-[28px] text-neutral-800 dark:text-neutral-200 font-brand">
+            Habilidades complementarias
+          </h2>
+          <ul class="list-disc pl-5 text-neutral-700 dark:text-neutral-200 leading-7">
+            <li>Gestión de proyectos creativos</li>
+            <li>Comunicación con clientes</li>
+            <li>Trabajo en equipo (duplas creativas)</li>
+            <li>Adaptabilidad multiplataforma</li>
+            <li>Pensamiento estratégico</li>
+          </ul>
+        </section>
+
+        <div class="w-full border-b-1 border-dashed border-b-gray-200 dark:border-b-neutral-700 mt-8 mb-10"></div>
+
+        <section>
+          <h2 id="idiomas" class="mt-2 mb-4 text-[28px] text-neutral-800 dark:text-neutral-200 font-brand">
+            Idiomas
+          </h2>
+          <ul class="list-disc pl-5 text-neutral-700 dark:text-neutral-200 leading-7">
+            <li>Español (nativo)</li>
+            <li>Gallego (nativo)</li>
+            <li>Inglés (nivel profesional)</li>
+          </ul>
+        </section>
+
+        <div class="w-full border-b-1 border-dashed border-b-gray-200 dark:border-b-neutral-700 mt-8 mb-10"></div>
+
+        <section>
+          <h2 id="contacto" class="mt-2 mb-4 text-[28px] text-neutral-800 dark:text-neutral-200 font-brand">
+            Contacto
+          </h2>
+          <p class="text-neutral-700 dark:text-neutral-200 leading-[1.8]">
+            Para colaboraciones o proyectos, escribe a <a class="underline" href={`mailto:${siteConfig.mail}`}>{siteConfig.mail}</a>.
+          </p>
+        </section>
       </main>
     </div>
   </div>
