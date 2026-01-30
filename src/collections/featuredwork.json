@@ -9,7 +9,7 @@
   },
   {
     "name": "Nobreh",
-    "description": "Imagen visual corporativa para empresa familiar de gestión de inversiones.",
+    "description": "Imagen visual corporativa para empresa familiar de gestiÃ³n de inversiones.",
     "tags": ["Identidad corporativa", "Inversiones"],
     "image": "/assets/works/gradientshub.jpg",
     "url": "/about#proyectos-destacados",
@@ -17,9 +17,9 @@
   },
   {
     "name": "Vitamina 3",
-    "description": "Proyecto universitario de branding con enfoque creativo y estratégico.",
+    "description": "Proyecto universitario de branding con enfoque creativo y estratÃ©gico.",
     "tags": ["Branding", "Universitario"],
-    "image": "/assets/works/ricoui.jpg",
+    "image": "/assets/works/vitamina-3-mockup.jpg",
     "url": "/about#proyectos-destacados",
     "isShow": true
   }
