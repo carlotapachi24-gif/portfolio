@@ -25,6 +25,20 @@ const {
   target = "_blank"
 } = Astro.props;
 
+const withBase = (path?: string) => {
+  if (!path) return path;
+  if (path.startsWith("http://") || path.startsWith("https://") || path.startsWith("data:")) {
+    return path;
+  }
+  if (path.startsWith("/")) {
+    return `${import.meta.env.BASE_URL}${path.slice(1)}`;
+  }
+  return path;
+};
+
+const resolvedImage = withBase(image);
+const resolvedVideo = withBase(video);
+
 // Generate stable id for each video for precise playback control
 const videoId = `workcard-video-${index}-${name.replace(/[^a-z0-9]+/gi, '-').toLowerCase()}`;
 ---
@@ -41,12 +55,12 @@ const videoId = `workcard-video-${index}-${name.replace(/[^a-z0-9]+/gi, '-').toL
 >
   <!-- Image/video container -->
   <div class="relative overflow-hidden aspect-video rounded-xl">
-    {video ? (
+    {resolvedVideo ? (
       <!-- Video -->
       <video
         id={videoId}
-        src={video}
-        poster={image}
+        src={resolvedVideo}
+        poster={resolvedImage}
         autoplay
         loop
         muted
@@ -58,13 +72,13 @@ const videoId = `workcard-video-${index}-${name.replace(/[^a-z0-9]+/gi, '-').toL
         controlslist="nodownload noplaybackrate nofullscreen noremoteplayback"
         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
       >
-        <source src={video} type="video/mp4" />
+        <source src={resolvedVideo} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
     ) : (
       <!-- Image -->
       <img
-        src={image}
+        src={resolvedImage}
         alt={name}
         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 hover:shadow-xl hover:shadow-primary/5 dark:hover:shadow-primary/10"
         loading="lazy"
