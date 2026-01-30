@@ -1,37 +1,12 @@
-import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "astro/config";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
-import { fileURLToPath } from "url";
-import path from "path";
-
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-import { defineConfig } from "astro/config";
+import tailwind from "@astrojs/tailwind";
 
 export default defineConfig({
   site: "https://carlotapachi24-gif.github.io",
   base: "/portfolio/",
-});
-
-
-// https://astro.build/config
-export default defineConfig({
-  site: siteUrl,
-  base: '/',
-  envPrefix: 'PUBLIC_',
-  vite: {
-    plugins: [tailwindcss()],
-    resolve: {
-      alias: {
-        '@': path.resolve(__dirname, './src')
-      }
-    }
-  },
-
-  server: {
-    port: 5200,
-  },
-
-  integrations: [mdx(), sitemap()],
-  
+  envPrefix: "PUBLIC_",
+  server: { port: 5200 },
+  integrations: [tailwind(), mdx(), sitemap()],
 });

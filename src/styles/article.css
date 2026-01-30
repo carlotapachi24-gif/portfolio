@@ -1,4 +1,5 @@
 /* HeroUI-style article styles */
+@tailwind components;
 @layer components {
   /* Use variables defined in global.css, no need to redefine */
 
