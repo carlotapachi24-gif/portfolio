@@ -669,3 +669,13 @@ width: 95%;
     right: 0;
   }
 }
+
+/* Scroll positioning for in-page anchors */
+section[id] {
+  scroll-margin-top: 80px;
+}
+@media only screen and (max-width: 768px) {
+  section[id] {
+    scroll-margin-top: 64px;
+  }
+}
